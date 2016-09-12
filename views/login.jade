@@ -1,0 +1,32 @@
+extend layout
+
+block content
+      .container
+        .row
+          .col-md-6.col-md-offset-3
+            .row
+              h1 Login Your ShadowCats Account!
+              br
+              br
+        .row
+          .col-md-6.col-md-offset-3
+            form.form-horizontal(role="form", action="/login", method="POST")
+              .form-group
+                .col-sm-2
+                  label.control-label(for="login") Email or Username
+                .col-sm-10
+                  input#inputEmail3.form-control(type="email", name="login",placeholder="Email")
+              .form-group
+                .col-sm-2
+                  label.control-label(for="password") Password
+                .col-sm-10
+                  input#inputPassword3.form-control(type="password", name="password",placeholder="Password")
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  .checkbox
+                    label
+                      input(type="checkbox")
+                      | Remember me
+              .form-group
+                .col-sm-offset-2.col-sm-10
+                  button.btn.btn-success(type="submit") log in

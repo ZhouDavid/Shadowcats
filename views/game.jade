@@ -1,0 +1,116 @@
+extend layout
+
+block content
+  div#container.container-fluid
+    div.row.upload-row.clearfix
+      div.col-md-6
+        svg#svg
+      div.col-md-6
+        pre#editor.
+          six = (one = 10) + (two = 20) + (three = 30)
+          solve.left 65
+          solve.use solve.map.items[1]
+          solve.up 30
+          list = [1, 2, 3, 4, 5]
+          race = (winner, runners...) ->
+            print winner, runners
+        div.row.upload-row.clearfix
+          div.col-md-12
+            button#run.button.button-large.button-plain.button-border.button-circle
+              i.fa.fa-play
+            button#left.button.button-large.button-plain.button-border.button-circle
+              i.fa.fa-angle-left
+            button#right.button.button-large.button-plain.button-border.button-circle
+              i.fa.fa-angle-right
+            button#useItem.button.button-large.button-plain.button-border.button-circle
+              i.fa.fa-hand-rock-o
+            button#recycle.button.button-large.button-plain.button-border.button-circle
+              i.fa.fa-recycle
+            .mockup-content
+              .morph-button.morph-button-modal.morph-button-modal-3.morph-button-fixed
+                button#back(type='button', hidden="true") Back Bigmap
+                .morph-content
+                  div
+                    .content-style-form.content-style-form-2
+                      span.icon.icon-close Close the dialog
+                      h2 Victory!
+                      h2 Back Bigmap
+                      button(href='bigmap', role='button', onclick='window.location.href = "bigmap"') Back
+            .mockup-content
+              .morph-button.morph-button-modal.morph-button-modal-3.morph-button-fixed
+                button#lose(type='button', hidden="true") You Lose!
+                .morph-content
+                  div
+                    .content-style-form.content-style-form-2
+                      span.icon.icon-close Close the dialog
+                      h2 You Lose!
+
+
+    span#tutor.tutor(title="Popover title" data-container="body" data-toggle="popover" data-placement="left" data-content="左侧的 Popover 中的一些内容")
+       button#close.close(data-dismiss='popover', aria-hidden='true') x
+    #map(style='display: none') #{map}
+
+    script(data-main="javascripts/main.js", src="/libs/requirejs/require.js")
+
+    style(type='text/css', media='screen').
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      #editor {
+        margin: 0;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 550px;
+      }
+      #svg {
+        margin: 0;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 600px;
+        height: 600px;
+      }
+      .ace_gutter-cell.ace_breakpoint{
+        background-image: url(images/breakpoint.png);
+      }
+      .tutor{
+        position:absolute;
+        z-index:100;
+        height:220px;
+        right:0px;
+        bottom:0px;
+        width:200px;
+        background:url(images/tutor.png);
+      }
+      .close{
+        padding: 0;
+        cursor: pointer;
+        background: 0 0;
+        border: 0;
+        -webkit-appearance: none
+        float: right;
+        font-size: 21px;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .2;
+        filter: alpha(opacity=20)
+      }
+      .button{
+        margin : 5px
+      }
+      .popover{
+        color  : #333
+      }
+      html {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+      }
